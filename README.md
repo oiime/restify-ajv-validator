@@ -60,7 +60,7 @@ server.post('/route', validator(routeSchema), function (req, res, next) {
 ## Options
 ### Options can be passed as a plain object after the schema. eg: validator(schema, {coerceTypes: true})
 
-`coerceTypes`: boolean that allows you to modify the data object for more loose matching (eg: force a string into an integer etc)
+`coerceTypes`: boolean that allows you to modify the data object for more loose matching (eg: force a string into an integer etc). note this would change the original values
 
 `useDefaults`: boolean that allows defaults to be injected into the data object
 
@@ -72,4 +72,10 @@ const errorHandler = function (req, res, next, errors, errorText) {
 }
 server.post('/route', validator(routeSchema, {errorHandler: errorHandler}), function (req, res, next) {
 })
+```
+
+## Changing defaults
+```
+const validator = require( 'restify-json-schema-validation-middleware' );
+validator.defaults.coerceTypes = true;
 ```

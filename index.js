@@ -4,6 +4,11 @@ const util = require('util')
 
 var __REQUEST_KEYS = ['params', 'body', 'headers', 'files', 'request']
 
+var defaults = {
+  v5: true,
+  useDefaults: true
+}
+
 function ValidationError (message, errors) {
   restify.RestError.call(this, {
     restCode: 'ValidationError',
@@ -18,7 +23,7 @@ function ValidationError (message, errors) {
 util.inherits(ValidationError, restify.RestError)
 
 function __validate (schema, opt, target) {
-  var opt = Object.assign({ v5: true, useDefaults: true }, opt)
+  var opt = Object.assign(defaults, opt)
   var ajv = new Ajv(opt)
   var validator = ajv.compile(schema)
 
@@ -55,5 +60,6 @@ __REQUEST_KEYS.forEach((k) => {
   }})
 })
 __validator.ValidationError = ValidationError
+__validator.defaults = defaults
 
 module.exports = __validator

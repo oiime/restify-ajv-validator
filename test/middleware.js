@@ -3,7 +3,7 @@ var sinon = require('sinon');
 var restify = require('restify');
 var assert = require('chai').assert;
 
-const validator = require( '..' );
+var validator = require( '..' );
 
 function matchError( message ) {
   return sinon.match( function( err ) {
