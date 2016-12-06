@@ -1,0 +1,35 @@
+{
+  "name": "restify-ajv-validator",
+  "version": "0.3.0",
+  "description": "validation middleware using ajv for restify",
+  "main": "index.js",
+  "author": {
+    "name": "Itamar Maltz"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "ajv",
+    "api",
+    "restify",
+    "restful",
+    "validation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oiime/restify-ajv-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oiime/restify-ajv-validator/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^4.9.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "restify": "^4.3.0",
+    "sinon": "^1.17.6"
+  }
+}
