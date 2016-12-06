@@ -1,6 +1,11 @@
 # restify-ajv-validator
 
-restify middle ware to validate requests, it uses [ajv](https://github.com/epoberezkin/ajv) as the underlying validator which accepts json schemas. Inspired by [restify-json-schema-validation-middleware]|(https://github.com/CanTireInnovations/restify-json-schema-validation-middleware)
+restify middleware to validate requests, it uses [ajv](https://github.com/epoberezkin/ajv) as the underlying validator which accepts json schemas. Inspired by [restify-json-schema-validation-middleware]|(https://github.com/CanTireInnovations/restify-json-schema-validation-middleware)
+
+## Installation
+```
+npm install --save restify-ajv-validator
+```
 
 ## Usage
 
