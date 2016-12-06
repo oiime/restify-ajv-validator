@@ -1,6 +1,6 @@
 # restify-ajv-validator
 
-restify middleware to validate requests, it uses [ajv](https://github.com/epoberezkin/ajv) as the underlying validator which accepts json schemas. Inspired by [restify-json-schema-validation-middleware]|(https://github.com/CanTireInnovations/restify-json-schema-validation-middleware)
+restify middleware to validate requests, it uses [ajv](https://github.com/epoberezkin/ajv) as the underlying validator which accepts json schemas. Inspired by [restify-json-schema-validation-middleware](https://github.com/CanTireInnovations/restify-json-schema-validation-middleware)
 
 ## Installation
 ```
@@ -80,7 +80,11 @@ server.post('/route', validator(routeSchema, {errorHandler: errorHandler}), func
 ```
 
 ## Changing defaults
-```
+```JavaScript
 const validator = require( 'restify-json-schema-validation-middleware' );
 validator.defaults.coerceTypes = true;
+validator.defaults.errorHandler = function (req, res, next, errors, errorText) {
+  return next(new validator.ValidationError(errorText, errors))
+}
+
 ```
